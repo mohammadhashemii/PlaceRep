@@ -23,7 +23,7 @@ Follow the steps below to construct the U.S. POI dataset:
 
 #### 1. Raw US POI Data from Foursquare
 
-To start, download the raw US POI data from the Foursquare dataset which contains over 20 million of POIs. The dataset can be downloaded from [google drive](https://drive.google.com/file/d/15S2bJ4KoJQnbwpTeFaVv1kxvy89XrjTh/view?usp=drive_link).
+To start, download the raw US POI data from the Foursquare dataset, which contains over 20 million POIs. The dataset can be downloaded from [google drive](https://drive.google.com/file/d/1RBLcXXEGBlgUmxAARzpaYkVxo3aRcaVJ/view?usp=drive_link).
 
 Then, place the raw file in `data/fsq/raw/`.
 
