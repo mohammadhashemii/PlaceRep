@@ -1,8 +1,8 @@
-# PlaceFM
-A Training-free Geospatial Foundation Model of Places using Large-Scale Point of Interest Data. [[paper]](https://arxiv.org/abs/2507.02921)
+# PlaceRep
+A Training-free Geospatial Place Representation Learning using Large-Scale Point of Interest Graph Data.
 
 
-<div align=center><img src="https://github.com/mohammadhashemii/PlaceFM/blob/main/figs/pipeline.png"/></div>
+<div align=center><img src="https://github.com/mohammadhashemii/PlaceRep/blob/main/figs/pipeline.png"/></div>
 
 
 ## Prepare Environments
@@ -63,7 +63,7 @@ data/
 ```
 
 
-## Generate Embeddings via Foundation Model
+## Generate Region-level Embeddings
 
 First, change your directory to `placefm/`:
 
@@ -72,7 +72,7 @@ cd placefm
 ```
 
 
-To generate state-level embeddings using PlaceFM:
+To generate state-level embeddings using PlaceRep:
 
 ```
 python train.py --dataset fsq --method placefm --state <state abbr> --clustering_method kmeans --verbose
@@ -81,7 +81,7 @@ python train.py --dataset fsq --method placefm --state <state abbr> --clustering
 You can set default configuration by using `configs/placefm/<dataset_name>.json`. The generated embeddings will be saved in `checkpoints/placefm`.
 
 
-## Evaluate on Geospatial Donwstream Tasks
+## Evaluate on Geospatial Downstream Tasks
 
 To evaluate the effectiveness of generated region embeddings, we've implemented three downstream tasks:
 
@@ -96,7 +96,7 @@ To evaluate the effectiveness of generated region embeddings, we've implemented 
 3. **Urban Functionality (UF)**  
     TODO
 
-Run the following command to evaluate on abovementioned tasks. You can set the following parameters:
+Run the following command to evaluate on the above-mentioned tasks. You can set the following parameters:
 
 - `--embeddings`: Path to the region embeddings file.
 - `--run_eval`: Number of evaluation runs (e.g., 10).
@@ -109,17 +109,3 @@ python test.py --embeddings <path to the embeddings> --run_eval 10 --dt_model rf
 
 The results will be logged in `checkpoints/logs/`.
 
-
-
-If you find this repo helpful, we would appreciate it if you could cite our paper.
-
-
----
-```
-@article{hashemi2025placefm,
-  title={PlaceFM: A Training-free Geospatial Foundation Model of Places using Large-Scale Point of Interest Data},
-  author={Hashemi, Mohammad and Amiri, Hossein and Zufle, Andreas},
-  journal={arXiv preprint arXiv:2507.02921},
-  year={2025}
-}
-```
